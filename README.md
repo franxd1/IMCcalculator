@@ -56,7 +56,7 @@ yarn install
 
 ```bash
 npx expo start
-# ou com CLI puro:
+# ou :
 npx react-native run-android
 npx react-native run-ios
 ```
