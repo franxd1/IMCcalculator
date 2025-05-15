@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert, Keyboard } from 'react-native';
+import { ScrollView, View, Text, TextInput, TouchableOpacity, StyleSheet, Keyboard } from 'react-native';
 
 const IMCCalculator = () => {
   const [weight, setWeight] = useState('');
@@ -11,7 +11,6 @@ const IMCCalculator = () => {
   const calculateIMC = () => {
     Keyboard.dismiss();
 
-    // Validação dos campos
     if (!weight || !height) {
       setError('Por favor, preencha todos os campos');
       return;
@@ -37,11 +36,9 @@ const IMCCalculator = () => {
 
     setError('');
 
-    // Cálculo do IMC
     const imcValue = weightNum / (heightNum * heightNum);
     setImc(imcValue.toFixed(2));
 
-    // Classificação
     if (imcValue < 18.5) {
       setClassification('Abaixo do peso');
     } else if (imcValue >= 18.5 && imcValue <= 24.9) {
@@ -66,7 +63,7 @@ const IMCCalculator = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.title}>Calculadora de IMC</Text>
 
       <TextInput
@@ -133,13 +130,12 @@ const IMCCalculator = () => {
           <Text style={styles.tableCell}>Obesidade grau III</Text>
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     padding: 20,
     backgroundColor: '#f5f5f5',
   },
@@ -152,7 +148,7 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 50,
-    borderColor: '#ccc',
+    borderColor: '#333  ',
     borderWidth: 1,
     borderRadius: 8,
     paddingHorizontal: 15,
