@@ -66,7 +66,7 @@ npx react-native run-ios
 ##  Estrutura do Projeto
 
 ```
-IMCCalculator.js  // Componente principal com toda a lógica e interface do app
+App.js  // Componente principal com toda a lógica e interface do app
 ```
 
 ---
